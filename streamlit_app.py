@@ -2,19 +2,14 @@ import streamlit as st
 import requests
 
 # タイトルと説明
-st.title("💬 Chatbot (Lambda API)")
+st.title("売上分析bot")
 st.write(
-    "このチャットボットは AWS Lambda をバックエンドとして使用しています。"
-    "Lambda 関数は API Gateway を介して呼び出され、自然言語の応答を生成します。"
+    "分析したいことを入力してください"
 )
 
-# API Gateway のエンドポイント入力
 
-api_gateway_url = st.text_input(
-    label="Lambda API のエンドポイント URL",
-    value="https://bok2c0gsbl.execute-api.ap-northeast-1.amazonaws.com/default/lambda1_FY25_MDS",
-    placeholder="https://your-api-id.execute-api.region.amazonaws.com/stage"
-)
+# Lambda API のエンドポイント URL（コード内で直接指定）
+api_gateway_url = "https://bok2c0gsbl.execute-api.ap-northeast-1.amazonaws.com/default/lambda1_FY25_MDS"
 
 if not api_gateway_url:
     st.info("Lambda API のエンドポイント URL を入力してください。", icon="🔗")
