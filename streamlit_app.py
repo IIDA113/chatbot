@@ -9,7 +9,12 @@ st.write(
 )
 
 # API Gateway のエンドポイント入力
-api_gateway_url = st.text_input("https://bok2c0gsbl.execute-api.ap-northeast-1.amazonaws.com/default/lambda1_FY25_MDS", placeholder="https://your-api-id.execute-api.region.amazonaws.com/stage")
+
+api_gateway_url = st.text_input(
+    label="Lambda API のエンドポイント URL",
+    value="https://bok2c0gsbl.execute-api.ap-northeast-1.amazonaws.com/default/lambda1_FY25_MDS",
+    placeholder="https://your-api-id.execute-api.region.amazonaws.com/stage"
+)
 
 if not api_gateway_url:
     st.info("Lambda API のエンドポイント URL を入力してください。", icon="🔗")
