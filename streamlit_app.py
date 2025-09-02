@@ -37,7 +37,7 @@ else:
 
         try:
             # Lambda API に POST リクエストを送信
-            response = requests.post(api_gateway_url, json=payload)
+            response = requests.post("https://bok2c0gsbl.execute-api.ap-northeast-1.amazonaws.com/default/lambda1_FY25_MDS", json=payload)
             response.raise_for_status()
             assistant_reply = response.json().get("reply", "（応答が取得できませんでした）")
         except Exception as e:
