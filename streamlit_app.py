@@ -30,18 +30,21 @@ else:
         with st.chat_message("user"):
             st.markdown(prompt)
 
-        # Lambda に送信するペイロード
+
+        # Lambda に送信するペイロード（修正後）
         payload = {
-            "messages": st.session_state.messages
+            "text": prompt  # 入力されたテキストのみを送信
         }
 
         try:
             # Lambda API に POST リクエストを送信
-            response = requests.post("https://bok2c0gsbl.execute-api.ap-northeast-1.amazonaws.com/default/lambda1_FY25_MDS", json=payload)
+            response = requests.post(api_gateway_url, json=payload)
             response.raise_for_status()
-            assistant_reply = response.json().get("reply", "（応答が取得できませんでした）")
+            response_json = response.json()
+            assistant_reply = response_json.get("input_text", "（応答が取得できませんでした）")
         except Exception as e:
             assistant_reply = f"エラーが発生しました: {e}"
+
 
         # 応答を表示・保存
         with st.chat_message("assistant"):
