@@ -41,7 +41,12 @@ else:
             response = requests.post(api_gateway_url, json=payload)
             response.raise_for_status()
             response_json = response.json()
-            assistant_reply = response_json.get("input_text","image_url")
+            assistant_reply = response_json.get("input_text", "")
+            image_url = response_json.get("image_url", None)
+
+            if image_url:
+                st.image(image_url)
+
         except Exception as e:
             assistant_reply = f"エラーが発生しました: {e}"
 
