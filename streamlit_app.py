@@ -41,7 +41,7 @@ else:
             response = requests.post(api_gateway_url, json=payload)
             response.raise_for_status()
             response_json = response.json()
-            assistant_reply = response_json.get("input_text", "（応答が取得できませんでした）")
+            assistant_reply = response_json.get("input_text","image_url","（応答が取得できませんでした）")
         except Exception as e:
             assistant_reply = f"エラーが発生しました: {e}"
 
