@@ -7,7 +7,6 @@ st.write(
     "分析したいことを入力してください"
 )
 
-
 # Lambda API のエンドポイント URL（コード内で直接指定）
 api_gateway_url = "https://bok2c0gsbl.execute-api.ap-northeast-1.amazonaws.com/default/lambda1_FY25_MDS"
 
@@ -41,17 +40,29 @@ else:
             response = requests.post(api_gateway_url, json=payload)
             response.raise_for_status()
             response_json = response.json()
+            # 各フィールドを取得
             assistant_reply = response_json.get("input_text", "")
             image_url = response_json.get("image_url", None)
-
-            if image_url:
-                st.image(image_url)
-
+            result_data = response_json.get("result_data", None)
         except Exception as e:
             assistant_reply = f"エラーが発生しました: {e}"
-
+            image_url = None
+            if image_url:
+                st.image(image_url)
+                result_data = None
 
         # 応答を表示・保存
         with st.chat_message("assistant"):
             st.markdown(assistant_reply)
+
+            # 画像がある場合は表示
+            if image_url:
+                st.image(image_url)
+
+            # result_data がある場合はテキスト形式で表示
+            if result_data:
+                st.markdown("#### 結果データ:")
+                st.code(result_data, language="text")
+
+        # セッションに保存
         st.session_state.messages.append({"role": "assistant", "content": assistant_reply})
