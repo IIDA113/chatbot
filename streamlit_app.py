@@ -42,22 +42,21 @@ else:
             response_json = response.json()
             # 各フィールドを取得
             assistant_reply = response_json.get("input_text", "")
-            image_url = response_json.get("image_url", None)
+            #image_url = response_json.get("image_url", None)
             result_data = response_json.get("result_data", None)
         except Exception as e:
             assistant_reply = f"エラーが発生しました: {e}"
-            image_url = None
-            if image_url:
-                st.image(image_url)
-                result_data = None
+            # image_url = None
+            # if image_url:
+            #     st.image(image_url)
 
         # 応答を表示・保存
         with st.chat_message("assistant"):
             st.markdown(assistant_reply)
 
             # 画像がある場合は表示
-            if image_url:
-                st.image(image_url)
+            # if image_url:
+            #     st.image(image_url)
 
             # result_data がある場合はテキスト形式で表示
             if result_data:
