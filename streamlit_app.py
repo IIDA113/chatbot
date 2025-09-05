@@ -50,4 +50,4 @@ else:
         with st.chat_message("assistant"):
             st.markdown(assistant_reply)
             if image_url:
-                st.image(image_url)
+                st.test(image_url)
