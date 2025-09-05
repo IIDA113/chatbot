@@ -48,7 +48,9 @@ else:
 
         # 応答を表示・保存
 
+
         with st.chat_message("assistant"):
             st.markdown(assistant_reply)
             if image_url:
-                st.markdown(f"画像を表示")
+                st.markdown(f'<a href="{image_url}" target="_blank">画像を表示</a>', unsafe_allow_html=True)
+
