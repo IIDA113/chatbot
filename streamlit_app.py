@@ -51,3 +51,5 @@ else:
             st.markdown(assistant_reply)
             if image_url:
                 st.image(image_url)
+            if image_url:
+                st.image(image_url) 
