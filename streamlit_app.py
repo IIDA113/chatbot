@@ -57,7 +57,8 @@ else:
         with st.chat_message("assistant"):
             st.markdown(assistant_reply)
             if image_url:
-                st.markdown(f'<a href="{image_url}" target="_blank">画像を表示</a>', unsafe_allow_html=True)
+                st.image(image_url)
+                #markdown(f'<a href="{image_url}" target="_blank">画像を表示</a>', unsafe_allow_html=True)
             else:
                 st.error("画像のURLが取得できませんでした。")
 
