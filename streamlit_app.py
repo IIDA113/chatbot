@@ -45,10 +45,9 @@ else:
             image_url = response_json.get("image_url", None)
         except Exception as e:
             assistant_reply = f"エラーが発生しました: {e}"
-            image_url = None
-            if image_url:
-                st.image(image_url)
 
         # 応答を表示・保存
         with st.chat_message("assistant"):
             st.markdown(assistant_reply)
+            if image_url:
+                st.image(image_url)
