@@ -47,7 +47,8 @@ else:
             assistant_reply = f"エラーが発生しました: {e}"
 
         # 応答を表示・保存
+
         with st.chat_message("assistant"):
             st.markdown(assistant_reply)
             if image_url:
-                st.text(image_url)
+                st.markdown(f"画像を表示")
