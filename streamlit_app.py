@@ -50,4 +50,8 @@ else:
         with st.chat_message("assistant"):
             st.markdown(assistant_reply)
             if image_url:
-                st.image(image_url)
+                try:
+                    st.image(image_url)
+                except Exception as e:
+                    st.warning("画像の表示に失敗しました。以下のURLを確認してください。")
+                    st.markdown(f"画像リンク")
