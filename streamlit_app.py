@@ -54,4 +54,4 @@ else:
                     st.image(image_url)
                 except Exception as e:
                     st.warning("画像の表示に失敗しました。以下のURLを確認してください。")
-                    st.markdown(f"画像リンク")
+                    st.text(image_url)
