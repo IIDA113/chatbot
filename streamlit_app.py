@@ -42,26 +42,13 @@ else:
             response_json = response.json()
             # 各フィールドを取得
             assistant_reply = response_json.get("input_text", "")
-            #image_url = response_json.get("image_url", None)
-            result_data = response_json.get("result_data", None)
+            image_url = response_json.get("image_url", None)
         except Exception as e:
             assistant_reply = f"エラーが発生しました: {e}"
-            # image_url = None
-            # if image_url:
-            #     st.image(image_url)
+            image_url = None
+            if image_url:
+                st.image(image_url)
 
         # 応答を表示・保存
         with st.chat_message("assistant"):
             st.markdown(assistant_reply)
-
-            # 画像がある場合は表示
-            # if image_url:
-            #     st.image(image_url)
-
-            # result_data がある場合はテキスト形式で表示
-            if result_data:
-                st.markdown("#### 結果データ:")
-                st.code(result_data, language="text")
-
-        # セッションに保存
-        st.session_state.messages.append({"role": "assistant", "content": assistant_reply})
