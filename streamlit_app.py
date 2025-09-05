@@ -25,7 +25,14 @@ else:
     # ユーザー入力受付
     if prompt := st.chat_input("メッセージを入力してください"):
         # ユーザーのメッセージを保存・表示
-        st.session_state.messages.append({"role": "user", "content": prompt})
+
+        # セッション状態の初期化
+        if "messages" not in st.session_state:
+            st.session_state.messages = []
+
+        # 直近3件のみ保持するように履歴を制限
+        st.session_state.messages = st.session_state.messages[-3:]
+
         with st.chat_message("user"):
             st.markdown(prompt)
 
