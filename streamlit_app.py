@@ -47,9 +47,14 @@ else:
             response = requests.post(api_gateway_url, json=payload)
             response.raise_for_status()
             response_json = response.json()
-            # 各フィールドを取得
-            assistant_reply = response_json.get("input_text", "")
-            image_url = response_json.get("image_url", None)
+
+            # 応答形式の確認と取得
+            if isinstance(response_json, dict):
+                assistant_reply = response_json.get("input_text", "")
+                image_url = response_json.get("image_url", None)
+            else:
+                assistant_reply = "Lambdaからの応答形式が不正です。"
+                image_url = None
         except Exception as e:
             assistant_reply = f"エラーが発生しました: {e}"
 
