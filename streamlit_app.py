@@ -8,7 +8,7 @@ st.write(
 )
 
 # Lambda API のエンドポイント URL（コード内で直接指定）
-api_gateway_url = "https://bok2c0gsbl.execute-api.ap-northeast-1.amazonaws.com/default/lambda1_FY25_MDS"
+api_gateway_url = "https://bok2c0gsbl.execute-api.ap-northeast-1.amazonaws.com/default/lambda1_FY25_MD"
 
 if not api_gateway_url:
     st.info("Lambda API のエンドポイント URL を入力してください。", icon="🔗")
