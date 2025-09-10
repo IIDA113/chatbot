@@ -6,13 +6,13 @@ users = {
     "lion": "Roar88!"
     "elephant":"Trunk9$"
     "wolf":"W01fRun!"
-    "":
-    "":
-    "":
-    "":
-    "":
-    "":
-    "":
+    "eagle":""
+    "fox":""
+    "dolphin":""
+    "owl":""
+    "cat":""
+    "ant":""
+    "panda":"B4mboo$"
 }
 
 # ログイン状態の初期化
