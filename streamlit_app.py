@@ -6,12 +6,12 @@ users = {
     "lion": "Roar88!"
     "elephant":"Trunk9$"
     "wolf":"W01fRun!"
-    "eagle":""
-    "fox":""
-    "dolphin":""
-    "owl":""
-    "cat":""
-    "ant":""
+    "eagle":"FlyEye#"
+    "fox":"F0xJump$"
+    "dolphin":"Swim@25"
+    "owl":"Wis3Owl!"
+    "cat":"Me0w#77"
+    "ant":"AntWork!"
     "panda":"B4mboo$"
 }
 
