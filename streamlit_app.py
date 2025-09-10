@@ -66,7 +66,7 @@ if st.session_state.logged_in:
                 response_json = response.json()
 
                 if isinstance(response_json, dict):
-                    # assistant_reply = response_json.get("input_text", "")
+                    assistant_reply = response_json.get("input_text", "")
                     image_url = response_json.get("image_url", None)
                 else:
                     assistant_reply = "Lambdaからの応答形式が不正です。"
@@ -75,7 +75,7 @@ if st.session_state.logged_in:
                 assistant_reply = f"エラーが発生しました。管理者に連絡してください。エラー詳細: {e}"
 
             with st.chat_message("assistant"):
-                st.text(assistant_reply)
+                # st.text(assistant_reply)
                 if image_url:
                     st.image(image_url)
                 else:
