@@ -3,7 +3,16 @@ import requests
 
 # ユーザー情報
 users = {
-    "demotype": "fy25"
+    "lion": "Roar88!"
+    "elephant":"Trunk9$"
+    "wolf":"W01fRun!"
+    "":
+    "":
+    "":
+    "":
+    "":
+    "":
+    "":
 }
 
 # ログイン状態の初期化
