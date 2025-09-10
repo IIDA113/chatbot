@@ -56,7 +56,7 @@ else:
                 assistant_reply = "Lambdaからの応答形式が不正です。"
                 image_url = None
         except Exception as e:
-            assistant_reply = f"エラーが発生しました: {e}"
+            assistant_reply = f"エラーが発生しました。管理者に連絡してください。エラー詳細: {e}"
 
         # 応答を表示・保存
         with st.chat_message("assistant"):
