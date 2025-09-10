@@ -30,7 +30,6 @@ if not st.session_state.logged_in:
         if username in users and users[username] == password:
             st.session_state.logged_in = True
             st.success("ログイン成功！")
-            st.experimental_rerun()
         else:
             st.error("ユーザー名またはパスワードが間違っています")
 
