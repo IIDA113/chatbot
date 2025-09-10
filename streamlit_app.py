@@ -4,25 +4,20 @@ import requests
 # ユーザー情報
 users = {
     "lion": "Roar88!",
-    "elephant":"Trunk9$",
-    "wolf":"W01fRun!",
-    "eagle":"FlyEye#",
-    "fox":"F0xJump$",
-    "dolphin":"Swim@25",
-    "owl":"Wis3Owl!",
-    "cat":"Me0w#77",
-    "ant":"AntWork!",
-    "panda":"B4mboo$"
+    "elephant": "Trunk9$",
+    "wolf": "W01fRun!",
+    "eagle": "FlyEye#",
+    "fox": "F0xJump$",
+    "dolphin": "Swim@25",
+    "owl": "Wis3Owl!",
+    "cat": "Me0w#77",
+    "ant": "AntWork!",
+    "panda": "B4mboo$"
 }
 
-# ログイン状態の初期化
-if "logged_in" not in st.session_state:
-    st.session_state.logged_in = False
-
-# ログインしていない場合のみログイン画面を表示
-if not st.session_state.logged_in:
+# ログイン画面
+def show_login():
     st.title("社内ログイン")
-
     username = st.text_input("ユーザー名")
     password = st.text_input("パスワード", type="password")
 
@@ -30,11 +25,12 @@ if not st.session_state.logged_in:
         if username in users and users[username] == password:
             st.session_state.logged_in = True
             st.success("ログイン成功！")
+            st.experimental_rerun()
         else:
             st.error("ユーザー名またはパスワードが間違っています")
 
-# ログイン後の画面
-if st.session_state.logged_in:
+# メイン画面（ログイン後）
+def show_main():
     st.title("売上分析bot")
     st.write("分析したいことを入力してください")
 
@@ -80,3 +76,13 @@ if st.session_state.logged_in:
                     st.image(image_url)
                 else:
                     st.error("画像のURLが取得できませんでした。")
+
+# セッション初期化
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
+
+# 表示切り替え
+if st.session_state.logged_in:
+    show_main()
+else:
+    show_login()
