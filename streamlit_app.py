@@ -50,7 +50,7 @@ if st.session_state.logged_in:
             payload = {
                 "text": prompt
             }
-
+"""
             try:
                 response = requests.post(api_gateway_url, json=payload)
                 response.raise_for_status()
@@ -71,3 +71,4 @@ if st.session_state.logged_in:
                     st.image(image_url)
                 else:
                     st.error("画像のURLが取得できませんでした。")
+"""
