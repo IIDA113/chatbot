@@ -66,7 +66,7 @@ if st.session_state.logged_in:
                 response_json = response.json()
                 
                 if isinstance(response_json, dict):
-                    if response_json.get("error", "")
+                    if response_json.get("error", ""):
                         ww=response_json.get("error", "")
                     assistant_reply = response_json.get("input_text", "")
                     image_url = response_json.get("image_url", None)
