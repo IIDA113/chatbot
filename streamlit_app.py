@@ -77,7 +77,6 @@ if st.session_state.logged_in:
             with st.chat_message("assistant"):
                 st.text(assistant_reply)
                 if image_url:
-                    st.text(0)
                     st.image(image_url)
                 else:
                     st.error("画像のURLが取得できませんでした。")
