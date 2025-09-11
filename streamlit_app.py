@@ -80,4 +80,5 @@ if st.session_state.logged_in:
                 if image_url:
                     st.image(image_url)
                 else:
+                    st.text(response_json.get("error", ""))
                     st.error("画像のURLが取得できませんでした。")
