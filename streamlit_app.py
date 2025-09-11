@@ -73,6 +73,7 @@ if st.session_state.logged_in:
                     image_url = None
             except Exception as e:
                 assistant_reply = f"エラーが発生しました。管理者に連絡してください。" # エラー詳細: {e}"
+                image_url = None
 
             with st.chat_message("assistant"):
                 st.text(assistant_reply)
