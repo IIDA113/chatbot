@@ -60,7 +60,6 @@ if st.session_state.logged_in:
             payload = {
                 "text": prompt
             }
-            st.text(0)
             try:
                 response = requests.post(api_gateway_url, json=payload)
                 response.raise_for_status()
@@ -76,7 +75,7 @@ if st.session_state.logged_in:
                 assistant_reply = f"エラーが発生しました。管理者に連絡してください。エラー詳細: {e}"
 
             with st.chat_message("assistant"):
-                # st.text(assistant_reply)
+                st.text(assistant_reply)
                 if image_url:
                     st.image(image_url)
                 else:
