@@ -39,7 +39,7 @@ if st.session_state.logged_in:
     st.title("売上分析bot")
     st.write("分析したいことを入力してください")
 
-    api_gateway_url = "https://bok2c0gsbl.execute-api.ap-northeast-1.amazonaws.com/default/lambda1_FY25_MDS1"
+    api_gateway_url = "https://bok2c0gsbl.execute-api.ap-northeast-1.amazonaws.com/default/lambda1_FY25_MDS"
 
     if not api_gateway_url:
         st.info("Lambda API のエンドポイント URL を入力してください。", icon="🔗")
