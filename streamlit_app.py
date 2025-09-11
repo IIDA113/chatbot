@@ -60,11 +60,12 @@ if st.session_state.logged_in:
             payload = {
                 "text": prompt
             }
+            st.text(0)
             try:
                 response = requests.post(api_gateway_url, json=payload)
                 response.raise_for_status()
                 response_json = response.json()
-
+                
                 if isinstance(response_json, dict):
                     assistant_reply = response_json.get("input_text", "")
                     image_url = response_json.get("image_url", None)
