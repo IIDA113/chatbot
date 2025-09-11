@@ -72,11 +72,12 @@ if st.session_state.logged_in:
                     assistant_reply = "Lambdaからの応答形式が不正です。"
                     image_url = None
             except Exception as e:
-                assistant_reply = f"エラーが発生しました。管理者に連絡してください。エラー詳細: {e}"
+                assistant_reply = f"エラーが発生しました。管理者に連絡してください。" # エラー詳細: {e}"
 
             with st.chat_message("assistant"):
                 st.text(assistant_reply)
                 if image_url:
+                    st.text(0)
                     st.image(image_url)
                 else:
                     st.error("画像のURLが取得できませんでした。")
