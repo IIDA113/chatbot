@@ -3,7 +3,16 @@ import requests
 
 # ユーザー情報
 users = {
-    "demotype": "fy25"
+    "lion": "Roar88!",
+    "elephant":"Trunk9$",
+    "wolf":"W01fRun!",
+    "eagle":"FlyEye#",
+    "fox":"F0xJump$",
+    "dolphin":"Swim@25",
+    "owl":"Wis3Owl!",
+    "cat":"Me0w#77",
+    "ant":"AntWork!",
+    "panda":"B4mboo$"
 }
 
 # ログイン状態の初期化
@@ -21,6 +30,7 @@ if not st.session_state.logged_in:
         if username in users and users[username] == password:
             st.session_state.logged_in = True
             st.success("ログイン成功！")
+            st.rerun()
         else:
             st.error("ユーザー名またはパスワードが間違っています")
 
@@ -66,7 +76,7 @@ if st.session_state.logged_in:
                 assistant_reply = f"エラーが発生しました。管理者に連絡してください。エラー詳細: {e}"
 
             with st.chat_message("assistant"):
-                st.text(assistant_reply)
+                # st.text(assistant_reply)
                 if image_url:
                     st.image(image_url)
                 else:
