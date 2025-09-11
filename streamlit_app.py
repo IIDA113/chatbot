@@ -66,6 +66,8 @@ if st.session_state.logged_in:
                 response_json = response.json()
                 
                 if isinstance(response_json, dict):
+                    if response_json.get("error", "")
+                        ww=response_json.get("error", "")
                     assistant_reply = response_json.get("input_text", "")
                     image_url = response_json.get("image_url", None)
                 else:
@@ -80,5 +82,5 @@ if st.session_state.logged_in:
                 if image_url:
                     st.image(image_url)
                 else:
-                    st.text(response_json.get("error", ""))
+                    st.text(ww)
                     st.error("画像のURLが取得できませんでした。")
