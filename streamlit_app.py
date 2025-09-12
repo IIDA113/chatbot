@@ -21,8 +21,9 @@ if "logged_in" not in st.session_state:
 
 # ログインしていない場合のみログイン画面を表示
 if not st.session_state.logged_in:
-    st.title("📊　Salesight　社内ログイン")
-    st.title("関係者限りです。それ以外の方はこの画面をクローズしてください。")
+    st.title("📊　Salesight")
+    st.write("こちらは売上分析エージェント、Salesightの社内ログイン画面です。")
+    st.write("⚠関係者限りです。それ以外の方はこの画面をクローズしてください。")
 
     username = st.text_input("ユーザー名")
     password = st.text_input("パスワード", type="password")
