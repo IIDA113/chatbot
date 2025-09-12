@@ -24,7 +24,7 @@ if not st.session_state.logged_in:
     st.title("📊　Salesight")
     st.write("こちらは売上分析エージェント、Salesightの社内ログイン画面です。")
     st.write("⚠ 関係者限りです。それ以外の方はこの画面をクローズしてください。")
-    st.write("⚠ 管理者はFY25_DE新入社員です。何かありましたらご連絡ください 🙏")
+    st.write("⚠ 管理者はFY25_DE新入社員です。何かありましたらご連絡ください。")
 
     username = st.text_input("ユーザー名")
     password = st.text_input("パスワード", type="password")
