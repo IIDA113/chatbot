@@ -21,7 +21,7 @@ if "logged_in" not in st.session_state:
 
 # ログインしていない場合のみログイン画面を表示
 if not st.session_state.logged_in:
-    st.title("✎𓈒𓂂𓏸 Salesight")
+    st.title("✎𓈒𓂂𓏸　 Salesight")
     st.write("〇 こちらは売上分析エージェント、Salesightの社内ログイン画面です。")
     st.write("⚠ 関係者限りです。それ以外の方はこの画面をクローズしてください。")
     st.write("⚠ 管理者はFY25_DE新入社員です。何かありましたらご連絡ください。")
