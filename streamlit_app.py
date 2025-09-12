@@ -22,6 +22,7 @@ if "logged_in" not in st.session_state:
 # ログインしていない場合のみログイン画面を表示
 if not st.session_state.logged_in:
     st.title("社内ログイン")
+    st.title("関係者限りです。それ以外の方はこの画面をクローズしてください。")
 
     username = st.text_input("ユーザー名")
     password = st.text_input("パスワード", type="password")
@@ -29,15 +30,16 @@ if not st.session_state.logged_in:
     if st.button("ログイン"):
         if username in users and users[username] == password:
             st.session_state.logged_in = True
-            st.success("ログイン成功！")
+            st.success("✨ログイン成功！✨")
             st.rerun()
         else:
             st.error("ユーザー名またはパスワードが間違っています")
 
 # ログイン後の画面
 if st.session_state.logged_in:
-    st.title("売上分析bot")
+    st.title("売上分析bot📊")
     st.write("分析したいことを入力してください")
+    st.write("⚠　傷つきやすいから、丁寧にやさしく教えてね")
 
     api_gateway_url = "https://bok2c0gsbl.execute-api.ap-northeast-1.amazonaws.com/default/lambda1_FY25_MDS"
 
