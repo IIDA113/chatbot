@@ -31,7 +31,7 @@ if not st.session_state.logged_in:
     if st.button("ログイン"):
         if username in users and users[username] == password:
             st.session_state.logged_in = True
-            st.success("✨ログイン成功！✨")
+            st.success("ログイン成功！")
             st.rerun()
         else:
             st.error("ユーザー名またはパスワードが間違っています")
@@ -40,7 +40,7 @@ if not st.session_state.logged_in:
 if st.session_state.logged_in:
     st.title("📊　Salesight")
     st.write("こちらは売上分析エージェントです。分析したいことを入力してください！")
-    st.write("⚠傷つきやすいから、丁寧にやさしく教えてね。　　")
+    st.write("⚠傷つきやすいから、丁寧にやさしく教えてね。")
 
     api_gateway_url = "https://bok2c0gsbl.execute-api.ap-northeast-1.amazonaws.com/default/lambda1_FY25_MDS"
 
