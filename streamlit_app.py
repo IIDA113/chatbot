@@ -41,8 +41,8 @@ if not st.session_state.logged_in:
 if st.session_state.logged_in:
     st.title("Salesight")
     st.write("こちらは売上分析エージェントです。分析したいことを入力してください！")
-    st.write("⚠ 管理者はFY25_DE新入社員です。何かありましたらご連絡ください")
-    st.write("⚠ 傷つきやすいから、丁寧にやさしく教えてね")
+    st.write("⚠ 管理者はFY25_DE新入社員です。何かありましたらご連絡ください。")
+    st.write("⚠ 傷つきやすいから、丁寧にやさしく教えてね。")
 
     api_gateway_url = "https://bok2c0gsbl.execute-api.ap-northeast-1.amazonaws.com/default/lambda1_FY25_MDS"
 
@@ -77,7 +77,7 @@ if st.session_state.logged_in:
                     assistant_reply = "Lambdaからの応答形式が不正です。"
                     image_url = None
             except Exception as e:
-                assistant_reply = f"エラーが発生しました。管理者に連絡してください。" # エラー詳細: {e}"
+                assistant_reply = f"エラーが発生しました。運用担当者に連絡してください。" # エラー詳細: {e}"
                 image_url = None
 
             with st.chat_message("assistant"):
