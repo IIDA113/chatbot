@@ -66,7 +66,7 @@ if st.session_state.logged_in:
                 response_json = response.json()
                 
                 if isinstance(response_json, dict):
-                    #assistant_reply = response_json.get("input_text", "")
+                    assistant_reply = response_json.get("input_text", "")
                     image_url = response_json.get("image_url", None)
                 else:
                     assistant_reply = "Lambdaからの応答形式が不正です。"
@@ -76,8 +76,8 @@ if st.session_state.logged_in:
                 image_url = None
 
             with st.chat_message("assistant"):
-                st.text(assistant_reply)
                 if image_url:
                     st.image(image_url)
                 else:
+                    st.text(assistant_reply)
                     st.error("画像のURLが取得できませんでした。")
