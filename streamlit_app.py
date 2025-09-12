@@ -21,7 +21,7 @@ if "logged_in" not in st.session_state:
 
 # ログインしていない場合のみログイン画面を表示
 if not st.session_state.logged_in:
-    st.title("📊　Salesight　社内ログイン　　")
+    st.title("📊　Salesight　社内ログイン")
     st.title("関係者限りです。それ以外の方はこの画面をクローズしてください。")
 
     username = st.text_input("ユーザー名")
@@ -37,9 +37,9 @@ if not st.session_state.logged_in:
 
 # ログイン後の画面
 if st.session_state.logged_in:
-    st.title("📊　Salesight（売上分析エージェント）")
-    st.write("　　分析したいことを入力してください　　")
-    st.write("⚠　傷つきやすいから、丁寧にやさしく教えてね　　")
+    st.title("📊　Salesight")
+    st.write("こちらは売上分析エージェントです。分析したいことを入力してください！")
+    st.write("⚠傷つきやすいから、丁寧にやさしく教えてね。　　")
 
     api_gateway_url = "https://bok2c0gsbl.execute-api.ap-northeast-1.amazonaws.com/default/lambda1_FY25_MDS"
 
