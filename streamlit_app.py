@@ -56,7 +56,7 @@ if st.session_state.logged_in:
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
 
-        if prompt := st.chat_input("✉︎依頼事項を入力してください"):
+        if prompt := st.chat_input("✉︎ 依頼事項を入力してください"):
             st.session_state.messages = st.session_state.messages[-3:]
 
             with st.chat_message("user"):
@@ -82,7 +82,10 @@ if st.session_state.logged_in:
 
             with st.chat_message("assistant"):
                 if image_url:
-                    st.image(image_url)
+                    try:
+                        st.image(image_url)
+                    except Exception as e:
+                        st.error("画像が容量オーバーです。運用担当者に連絡してください。")
                 else:
                     st.text(assistant_reply)
                     st.error("画像のURLが取得できませんでした。")
