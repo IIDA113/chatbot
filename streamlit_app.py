@@ -39,7 +39,7 @@ if not st.session_state.logged_in:
 
 # ログイン後の画面
 if st.session_state.logged_in:
-    st.title("✎𓈒𓂂𓏸 Salesight")
+    st.title("✎𓈒𓂂𓏸 　Salesight")
     st.write("〇 こちらは売上分析エージェントです。分析したいことを入力してください！")
     st.write("⚠ 管理者はFY25_DE新入社員です。何かありましたらご連絡ください。")
     st.write("⚠ 傷つきやすいから、丁寧にやさしく教えてね。")
